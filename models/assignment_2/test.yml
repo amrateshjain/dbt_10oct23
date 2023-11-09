@@ -1,0 +1,14 @@
+models:
+  - name: orders
+    columns:
+      - name: S_NAME
+        tests:
+          - unique
+          - not_null
+  - name: customer
+    columns:
+      - name: S_NAME
+        tests:
+          - relationships:
+              to: ref('orders')
+              field: S_NAME
